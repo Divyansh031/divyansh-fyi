@@ -17,49 +17,53 @@
 }
 
 body {
+    /* Use dvh to prevent mobile browser address bar layout jumps */
     min-height: 100vh;
+    min-height: 100dvh; 
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-body);
     background-color: var(--bg-color);
     color: var(--text-main);
-    overflow: hidden;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
     position: relative;
+    padding: 1.5rem; /* Prevents card from touching screen edges */
 }
 
 /* Ambient Glowing Background Orbs */
 .glow-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.45;
+    filter: blur(100px);
+    opacity: 0.4;
     z-index: 0;
     animation: float 10s ease-in-out infinite alternate;
+    pointer-events: none;
 }
 
 .orb-1 {
-    width: 350px;
-    height: 350px;
+    width: min(50vw, 350px);
+    height: min(50vw, 350px);
     background: var(--primary-cyan);
-    top: 15%;
-    left: 20%;
+    top: 10%;
+    left: 10%;
 }
 
 .orb-2 {
-    width: 400px;
-    height: 400px;
+    width: min(60vw, 400px);
+    height: min(60vw, 400px);
     background: var(--primary-purple);
     bottom: 10%;
-    right: 20%;
+    right: 10%;
     animation-delay: -5s;
 }
 
-/* Futuristic Grid Overlay */
+/* Grid Overlay */
 .background-grid {
     position: absolute;
     inset: 0;
-    background-size: 40px 40px;
+    background-size: 30px 30px;
     background-image: 
         linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -71,16 +75,16 @@ main.card {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 3.5rem 3rem;
+    padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 3rem);
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 24px;
+    border-radius: 20px;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
                 0 0 30px rgba(0, 240, 255, 0.05);
+    width: 100%;
     max-width: 480px;
-    width: 90%;
 }
 
 /* Status Indicator */
@@ -88,15 +92,17 @@ main.card {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.75rem;
+    font-size: clamp(0.65rem, 2vw, 0.75rem);
     font-family: var(--font-heading);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     color: var(--primary-cyan);
     background: rgba(0, 240, 255, 0.08);
     border: 1px solid rgba(0, 240, 255, 0.25);
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: 20px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    white-space: nowrap;
 }
 
 .status-dot {
@@ -106,17 +112,19 @@ main.card {
     border-radius: 50%;
     box-shadow: 0 0 8px var(--primary-cyan);
     animation: pulse 2s infinite;
+    flex-shrink: 0;
 }
 
-/* Typography */
+/* Responsive Heading with Fluid Typography */
 h1 {
     font-family: var(--font-heading);
-    font-size: 3.25rem;
+    /* Fluid font-size scales automatically between mobile & desktop */
+    font-size: clamp(2rem, 8vw, 3.25rem); 
     font-weight: 900;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
+    word-break: break-word; /* Safety fallback for narrow screens */
     background: linear-gradient(135deg, #ffffff 0%, var(--primary-cyan) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.75rem;
@@ -124,10 +132,10 @@ h1 {
 }
 
 p.subtitle {
-    font-size: 1.125rem;
+    font-size: clamp(0.95rem, 3.5vw, 1.125rem);
     color: var(--text-muted);
     font-weight: 300;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     letter-spacing: 0.02em;
 }
 
@@ -135,23 +143,26 @@ p.subtitle {
 .cta-button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     font-family: var(--font-heading);
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 2.5vw, 0.85rem);
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #050508;
     background: var(--primary-cyan);
-    padding: 12px 28px;
+    padding: 12px 24px;
     border-radius: 12px;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+    max-width: 100%;
 }
 
 .cta-button svg {
     transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .cta-button:hover {
@@ -164,6 +175,22 @@ p.subtitle {
     transform: translateX(4px);
 }
 
+/* Mobile Specific Adjustments */
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .status-badge {
+        font-size: 0.65rem;
+        padding: 5px 10px;
+    }
+
+    .cta-button {
+        width: 100%; /* Full width button on small mobile screens */
+    }
+}
+
 /* Keyframe Animations */
 @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
@@ -172,5 +199,5 @@ p.subtitle {
 
 @keyframes float {
     0% { transform: translate(0, 0); }
-    100% { transform: translate(30px, 40px); }
+    100% { transform: translate(20px, 20px); }
 }
