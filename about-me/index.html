@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divyansh — About</title>
+    <title>About — Divyansh Sharma</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -13,115 +13,91 @@
     <input type="checkbox" id="theme-toggle" class="theme-toggle-input" aria-hidden="true">
 
     <div class="page-wrapper">
-        <div class="scanlines"></div>
-        <div class="grid-bg"></div>
-
         <label for="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></label>
 
-        <a href="/" class="back-link">
-            <span class="back-arrow">←</span>
-            <span class="back-text">RETURN TO BASE</span>
-        </a>
-
         <main class="container">
-            <div class="hero">
-                <div class="status-line">
-                    <span class="status-dot"></span>
-                    <span class="status-text">PROFILE LOADED</span>
-                </div>
+            <header class="site-header">
+                <a href="/" class="logo-link">
+                    <span class="logo">DS</span>
+                </a>
+                <nav class="header-nav">
+                    <a href="/about/" class="active">About</a>
+                    <a href="/blog/">Blog</a>
+                    <a href="/#connect">Contact</a>
+                    <a href="https://github.com/Divyansh031" target="_blank" rel="noopener">GitHub</a>
+                </nav>
+            </header>
 
-                <h1 class="glitch">
-                    <span class="char">A</span><span class="char">B</span><span class="char">O</span><span class="char">U</span><span class="char">T</span>
-                </h1>
+            <section class="page-hero">
+                <span class="section-num">[01]</span>
+                <h1 class="page-title">About</h1>
+            </section>
 
-                <div class="divider">
-                    <span class="divider-line"></span>
-                    <span class="divider-hex">◈</span>
-                    <span class="divider-line"></span>
-                </div>
-            </div>
-
-            <section class="content">
-                <div class="bio-card">
-                    <div class="card-header">
-                        <span class="card-icon">◉</span>
-                        <span class="card-title">IDENTITY</span>
-                    </div>
-                    <p class="bio-text">
-                        Backend engineer building reliable infrastructure 
-                        and scalable services. I design clean APIs, automate deployments, and 
-                        keep systems running under load. Currently exploring distributed systems 
-                        and cloud-native architectures.
+            <section class="about-grid">
+                <div class="about-block">
+                    <h2 class="block-title">Identity</h2>
+                    <p class="block-text">
+                        I'm Divyansh, I work at the intersection of backend engineering and infrastructure — I write the code and then figure out how to deploy, monitor, and keep it running.<br>
+                        On the backend side: Python with FastAPI, Go for services that need to be fast, and PostgreSQL or MongoDB for data.<br>
+                        On the infrastructure side: Docker, Kubernetes, Jenkins, and AWS. I build CI/CD pipelines, bake machine images, and set up monitoring with Prometheus and Grafana so I know something's wrong before users do.<br>
+                        I also like breaking things to understand them — provisioned a Kubernetes cluster from scratch once, just to see how all the pieces fit together.
                     </p>
                 </div>
 
-                <div class="skills-section">
-                    <div class="skills-header">
-                        <span class="skills-icon">◈</span>
-                        <span class="skills-title">TECH STACK</span>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3 class="category-name">
-                            <span class="cat-bracket">[</span>⚙️ BACKEND<span class="cat-bracket">]</span>
-                        </h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">🐍 Python</span>
-                            <span class="skill-tag">⚙️ Go</span>
-                            <span class="skill-tag">🐚 Bash</span>
-                            <span class="skill-tag">⚡ FastAPI</span>
-                            <span class="skill-tag">🐘 PostgreSQL</span>
-                            <span class="skill-tag">🍃 MongoDB</span>
-                            <span class="skill-tag">🔌 REST APIs</span>
-                            <span class="skill-tag">🧩 gRPC</span>
+                <div class="about-block">
+                    
+                    <h2 class="block-title">Education</h2>
+                    <div class="edu-item">
+                        <div class="edu-header-row">
+                            <span class="edu-degree">BTech Computer Science Engineering</span>
+                            <span class="edu-year">2022 — 2026</span>
                         </div>
+                        <p class="edu-school">Guru Nanak Dev University, Amritsar, Punjab</p>
                     </div>
+                </div>
+            </section>
 
-                    <div class="skill-category">
-                        <h3 class="category-name">
-                            <span class="cat-bracket">[</span>☁️ DEVOPS<span class="cat-bracket">]</span>
-                        </h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">🐳 Docker</span>
-                            <span class="skill-tag">☸️ Kubernetes</span>
-                            <span class="skill-tag">☁️ AWS</span>
-                            <span class="skill-tag">🏗️ Terraform</span>
-                            <span class="skill-tag">🔄 CI/CD</span>
-                            <span class="skill-tag">👷 Jenkins</span>
-                            <span class="skill-tag">⚙️ GitHub Actions</span>
-                            <span class="skill-tag">🐧 Linux</span>
-                            <span class="skill-tag">🌐 Nginx</span>
-                            <span class="skill-tag">📈 Prometheus</span>
-                            <span class="skill-tag">📊 Grafana</span>
-                            <span class="skill-tag">🧰 Ansible</span>
-                        </div>
+            <section class="skills-section">
+                <div class="skills-header">
+                    <span class="section-num">[02]</span>
+                    <h2 class="page-title">Capabilities</h2>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="skill-cat">Backend</h3>
+                    <div class="skill-list">
+                        <span>Python</span>
+                        <span>Go</span>
+                        <span>Bash</span>
+                        <span>FastAPI</span>
+                        <span>PostgreSQL</span>
+                        <span>MongoDB</span>
+                        <span>SQLAlchemy</span>
+                        <span>REST APIs</span>
+                        <span>gRPC</span>
+                        <span>JWT</span>
                     </div>
                 </div>
 
-                <div class="edu-section">
-                    <div class="edu-header">
-                        <span class="edu-icon">▣</span>
-                        <span class="edu-title">EDUCATION</span>
-                    </div>
-                    <div class="edu-card">
-                        <div class="edu-degree">
-                            <span class="edu-bracket">[</span>BTech Computer Science Engineering<span class="edu-bracket">]</span>
-                        </div>
-                        <div class="edu-meta">
-                            <span class="edu-year">2022 — 2026</span>
-                            <span class="edu-sep">//</span>
-                            <span class="edu-inst">Guru Nanak Dev University</span>
-                        </div>
-                        <div class="edu-loc">Amritsar, Punjab</div>
+                <div class="skill-group">
+                    <h3 class="skill-cat">DevOps</h3>
+                    <div class="skill-list">
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>AWS</span>
+                        <span>CI/CD</span>
+                        <span>Jenkins</span>
+                        <span>Linux</span>
+                        <span>Nginx</span>
+                        <span>Prometheus</span>
+                        <span>Grafana</span>
                     </div>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            <div class="footer-line">
-                <span>Copyright © 2026 Divyansh Sharma.</span>
-            </div>
+            <p>© 2026 Divyansh Sharma. Built with patience.</p>
         </footer>
     </div>
 </body>
