@@ -8,12 +8,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+    (function() {
+        const h = document.documentElement;
+        const s = localStorage.getItem('theme');
+        const d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        function apply(t) { h.setAttribute('data-theme', t); localStorage.setItem('theme', t); }
+        s ? apply(s) : d ? apply('dark') : apply('light');
+    })();
+    </script>
 </head>
 <body>
-    <input type="checkbox" id="theme-toggle" class="theme-toggle-input" aria-hidden="true">
-
     <div class="page-wrapper">
-        <label for="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></label>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
 
         <main class="container">
             <header class="site-header">
@@ -34,16 +44,16 @@
                 </p>
                 <div class="hero-cta">
                     <a href="/about-me/" class="btn-primary">More about me</a>
-                    <a href="mailto:your@email.com" class="btn-secondary">Get in touch</a>
+                    <a href="mailto:divyanshsayz@gmail.com" class="btn-secondary">Get in touch</a>
                 </div>
             </section>
 
             <section class="connect" id="connect">
                 <span class="section-label">Connect</span>
                 <div class="connect-links">
-                    <a href="https://github.com/divyansh031" target="_blank" rel="noopener">
+                    <a href="https://github.com/Divyansh031" target="_blank" rel="noopener">
                         <span class="connect-name">GitHub</span>
-                        <span class="connect-handle">divyansh031</span>
+                        <span class="connect-handle">Divyansh031</span>
                     </a>
                     <a href="https://linkedin.com/in/divyansh-sharma31" target="_blank" rel="noopener">
                         <span class="connect-name">LinkedIn</span>
@@ -61,5 +71,17 @@
             <p>© 2026 Divyansh Sharma. Built with patience.</p>
         </footer>
     </div>
+
+    <script>
+    (function() {
+        const h = document.documentElement;
+        const b = document.querySelector('.theme-toggle');
+        b.addEventListener('click', () => {
+            const t = h.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            h.setAttribute('data-theme', t);
+            localStorage.setItem('theme', t);
+        });
+    })();
+    </script>
 </body>
 </html>
