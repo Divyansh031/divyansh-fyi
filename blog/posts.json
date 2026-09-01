@@ -1,0 +1,8 @@
+[
+    {
+        "slug": "k8s-the-hard-way",
+        "title": "Kubernetes the Hard Way",
+        "date": "2026-09-01",
+        "excerpt": "How I set up a Kuberntes cluster on my local Ubuntu laptop."
+    }
+]
