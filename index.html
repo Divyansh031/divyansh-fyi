@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divyansh Sharma</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -27,27 +28,33 @@
 
         <main class="container">
             <header class="site-header">
-                <span class="logo">D.</span>
+                <a href="/" class="logo-link">
+                    <span class="logo">D.</span>
+                </a>
                 <nav class="header-nav">
                     <a href="/about-me/">About</a>
                     <a href="/blog/">Blog</a>
-                    <a href="#connect">Contact</a>
+                    <a href="#connect">Connect</a>
                     <a href="https://github.com/divyansh031" target="_blank" rel="noopener">GitHub</a>
                 </nav>
             </header>
 
             <section class="hero">
-                <p class="hero-label">Backend Engineer & DevOps</p>
-                <h1 class="hero-name">Divyansh<br>Sharma</h1>
-                <p class="hero-desc">
-                    I'm a curious and hardworking developer interested in backend engineering and the infrastructure that supports it.<br>
-
-                    I work with Python and Go, and I'm learning more about systems, infrastructure, and how things work at scale. I enjoy learning, experimenting, and figuring out things that are new to me.
-
-                </p>
-                <div class="hero-cta">
-                    <a href="/about-me/" class="btn-primary">More about me</a>
-                    <a href="mailto:divyanshsayz@gmail.com" class="btn-secondary">Get in touch</a>
+                <div class="hero-main">
+                    <p class="hero-label">Backend Engineer & DevOps</p>
+                    <h1 class="hero-name">Divyansh<br>Sharma</h1>
+                    <p class="hero-desc">
+                        I'm a curious and hardworking developer interested in backend engineering and the infrastructure that supports it. I work with Python and Go, and I'm learning more about systems, infrastructure, and how things work at scale. I enjoy learning, experimenting, and figuring out things that are new to me.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="/about-me/" class="btn-primary">More about me</a>
+                        <a href="mailto:divyanshsayz@gmail.com" class="btn-secondary">Get in touch</a>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-frame">
+                        <img src="photo.webp" alt="Divyansh Sharma">
+                    </div>
                 </div>
             </section>
 
@@ -55,15 +62,15 @@
                 <span class="section-label">Connect</span>
                 <div class="connect-links">
                     <a href="https://github.com/divyansh031" target="_blank" rel="noopener">
-                        <span class="connect-name">GitHub</span>
+                        <svg class="connect-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                         <span class="connect-handle">divyansh031</span>
                     </a>
                     <a href="https://linkedin.com/in/divyansh-sharma31" target="_blank" rel="noopener">
-                        <span class="connect-name">LinkedIn</span>
+                        <svg class="connect-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         <span class="connect-handle">divyansh-sharma31</span>
                     </a>
                     <a href="mailto:divyanshsayz@gmail.com">
-                        <span class="connect-name">Email</span>
+                        <svg class="connect-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         <span class="connect-handle">divyanshsayz@gmail.com</span>
                     </a>
                 </div>
@@ -71,7 +78,7 @@
         </main>
 
         <footer class="footer">
-            <p>© 2026 Divyansh Sharma. Built with patience.</p>
+            <p>© 2026 Divyansh Sharma.</p>
         </footer>
     </div>
 
