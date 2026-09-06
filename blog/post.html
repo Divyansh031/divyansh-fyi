@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
     (function() {
         const h = document.documentElement;
@@ -102,8 +103,22 @@
             const html = marked.parse(markdown, { renderer });
             document.getElementById('post-content').innerHTML = html;
 
-            // Extract title from first h1 and move it to the page hero
+            // Turn ```mermaid code fences into rendered diagrams
             const contentEl = document.getElementById('post-content');
+            const mermaidBlocks = contentEl.querySelectorAll('code.language-mermaid');
+            if (mermaidBlocks.length) {
+                mermaidBlocks.forEach((block) => {
+                    const pre = document.createElement('pre');
+                    pre.className = 'mermaid';
+                    pre.textContent = block.textContent;
+                    block.parentElement.replaceWith(pre);
+                });
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'default' });
+                await mermaid.run({ querySelector: '.mermaid' });
+            }
+
+            // Extract title from first h1 and move it to the page hero
             const h1 = contentEl.querySelector('h1');
             if (h1) {
                 document.getElementById('post-title').textContent = h1.textContent;
